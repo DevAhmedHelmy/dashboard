@@ -13,30 +13,27 @@
 @endif
 
 <div class="col-md-9">
+			@if(isset($items))
 			<div class="row">
-				@if(isset($items))
+				
 					@foreach ($items as $item)
 				<div class="col-lg-4 col-md-6 mb-4">
 		              <div class="card h-100">
-		                <a href="categories/{{$item->id}}/details"><img class="card-img-top img-responsive" style="height: 147px;width: 100%;" alt="" 
-		                src="/{{$item->item_image}}"></a>
-		                <div class="card-body">
+		                <a href="categories/{{$item->id}}/details"><img class="card-img-top img-responsive" alt="" src="/{{$item->item_image}}"></a>
+		                <div class="card-body text-center">
 		                  <h4 class="card-title">
-		                    <a href="#">{{$item->name}}</a>
+		                    <a href="/items/{{$item->id}}/show">{{$item->item_name}}</a>
 		                  </h4>
-							<h5>
-							<a href="#">{{$item->name}}</a>
-		                    
-		                  </h5>
+							<p>{{$item->description}}</p>
 		                  <h5>$ {{$item->price}}</h5>
-		                  <p>{{$item->addDate}}</p>
+		                  <p>{{$item->created_at}}</p>
 		                  <p class="buttons">
                                 <a href="/items/{{$item->id}}/show" class="btn btn-default">View detail</a>
                                 <a href="basket.html" class="btn btn-primary">
                                 <i class="fa fa-shopping-cart"></i> Add to cart</a>
                             </p>
 		                </div>
-		                <div class="card-footer">
+		                <div class="card-footer text-center">
 		                  <small class="text-muted">★ ★ ★ ★ ☆</small>
 		                </div>
 		              </div>

@@ -17,7 +17,7 @@
 		          	@if($item->approve == 0)
 		          		<span>Not Approved</span>
 		          	@endif
-		            <img class="card-img-top" src="{{$item->item_image}}" alt="" width="250" height="250">
+		            <img class="card-img-top" src="{{url($item->item_image)}}" alt="">
 		            <div class="card-body">
 		              <h4 class="card-title">{{ucfirst(trans($item->item_name))}}</h4>
 		              <p class="card-text">{{ucfirst(trans($item->description))}}</p>
