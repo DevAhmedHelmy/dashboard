@@ -20,8 +20,8 @@ class Member extends Authenticatable
 		'password'
    	];
 
-    public function item()
+    public function items()
     {
-      return $this->hasMany(Item::class);
+      return $this->hasMany(Item::class,'member_id');
     }
 }

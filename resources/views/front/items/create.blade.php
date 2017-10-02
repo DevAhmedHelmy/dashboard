@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<form class="form-horizontal" method="POST" action="/items" enctype="multipart/form-data">
+<form class="form-horizontal" method="POST" action="/itemsUser" enctype="multipart/form-data">
     {{csrf_field()}}
                 <fieldset>
                     <legend><h2>Add Item</h2></legend>
@@ -96,9 +96,15 @@
                     </div>
                 </fieldset>
                 <div class="box-footer">
-                    <button type="submit"
-                            class="btn btn-primary">Save Category
-                    </button>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="filebutton">Save</label>
+                        <div class="col-md-6">
+                            <button type="submit"
+                            class="btn btn-primary">Save Item
+                             </button>
+                        </div>
+                    </div>
+                    
                 </div>
             </form>
 

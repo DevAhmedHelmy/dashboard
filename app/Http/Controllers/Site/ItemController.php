@@ -27,6 +27,7 @@ class ItemController extends Controller
     }
     public function store()
     {
+
     	$item = new Item;
     	$item->item_name=request('item_name');
     	$item->description=request('description');
@@ -35,6 +36,7 @@ class ItemController extends Controller
     	$item->status=request('status');
     	$item->member_id=auth()->user()->id;
     	$item->cat_id=request('categories');
+
     	if(request()->hasFile('image')){
             $photo = 'image/upload/';
             $name = str_random(12).'_'.time().".".request()->file('image')->getClientOriginalExtension();
@@ -42,12 +44,12 @@ class ItemController extends Controller
             $path = $photo.$name;
             $item->item_image = $path;
         }
-       
+      
         if (! $item->save()) {
             flash('Your item has been created')->warning();
         }
 		flash()->overlay('Your item has been created', 'Admin');
-        return redirect('/profies');
+        return redirect('/');
 
     }
 }

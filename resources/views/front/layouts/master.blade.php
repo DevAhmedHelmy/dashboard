@@ -43,6 +43,7 @@
             <!-- Main content -->
             <section class="content container">
                <div class="container">
+                @include('flash::message')
                 @yield('content')
                 
             </div>

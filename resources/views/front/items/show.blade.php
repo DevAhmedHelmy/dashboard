@@ -72,12 +72,12 @@
 			                      <tr>
 			                        <td>Category</td>
 			                        <td><a href="/categories/{{$item->cat_id}}/show">
-			                        	{{$item->cat_name}}</a>
+			                        	{{$item->category->cat_name}}</a>
 			                        </td>
 			                      </tr>
 			                      <tr>
 			                        <td>User Add</td>
-			                        <td>{{$item->user_name}}</td>
+			                        <td>{{$item->member->user_name}}</td>
 			                      </tr>
 			                      </tr>
 			                     
