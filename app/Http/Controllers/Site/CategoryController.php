@@ -17,8 +17,9 @@ class CategoryController extends Controller
     }
     public function show($id)
     {
-        $categories = Category::findOrFail($id);
-        return $categories;
-    	return view('front/categories/show');
+        $categories = Category::all();
+        $items = Item::where('cat_id','=',$id)->get();
+     
+    	return view('front/categories/show',compact('categories','items'));
     }
 }

@@ -22,13 +22,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{auth()->user()->user_name}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="/profile/{{auth()->user()->id}}/show">Profile</a></li>
+            <li><a href="{{auth()->user()->user_name}}/items/create">Add New Item</a></li>
+            <li><a href="#">LogOut</a></li>
+            
           </ul>
         </li>
         @else

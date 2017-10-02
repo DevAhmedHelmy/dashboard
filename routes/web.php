@@ -72,11 +72,14 @@ Route::group(['middleware' => 'is_admin'],function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 // fornt end route
-Route::get('/','IndexController@index');
-Route::get('/about','IndexController@about');
+Route::get('/','Site\HomeController@index');
+Route::get('/about','Site\HomeController@about');
 Route::get('/front/categories','Site\CategoryController@index');
 Route::get('/categories/{id}/show','Site\CategoryController@show');
-// Route::get('frontItem/{id}/show','IndexController@show');
+Route::get('/items/{id}/show','Site\ItemController@show');
+Route::get('{userName}/items/create/','Site\ItemController@create');
+Route::post('/items','Site\ItemController@store');
+Route::get('/profile/{id}/show','Site\ProfileController@show');
 // Route::group(['middleware' => 'is_user'],function(){
 // 	Route::get('frontItem/{id}/show','IndexController@show');	
 // });

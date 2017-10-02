@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Item;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Member extends Authenticatable
@@ -18,4 +19,9 @@ class Member extends Authenticatable
 		'image',
 		'password'
    	];
+
+    public function item()
+    {
+      return $this->hasMany(Item::class);
+    }
 }

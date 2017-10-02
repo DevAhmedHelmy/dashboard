@@ -14,6 +14,9 @@
 			@foreach($items as $item)
 			 	<div class="col-lg-3 col-md-6 mb-4">
 		          <div class="card">
+		          	@if($item->approve == 0)
+		          		<span>Not Approved</span>
+		          	@endif
 		            <img class="card-img-top" src="{{$item->item_image}}" alt="" width="250" height="250">
 		            <div class="card-body">
 		              <h4 class="card-title">{{ucfirst(trans($item->item_name))}}</h4>
@@ -21,7 +24,7 @@
 		              <p class="card-text">$ {{$item->price}}</p>
 		            </div>
 		            <div class="card-footer">
-		              <a href="categories/{{$item->cat_id}}/show" class="btn btn-primary waves-effect waves-light">See More</a>
+		              <a href="items/{{$item->cat_id}}/show" class="btn btn-primary waves-effect waves-light">See More</a>
 		            </div>
 		          </div>
 

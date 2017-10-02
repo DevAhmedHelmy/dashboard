@@ -6,7 +6,7 @@
 		<h1>Shop</h1>
 		<div class="list-group">
 			@foreach ($categories as $category)
-				<a href="#"  class="list-group-item">{{$category->cat_name}}</a>
+				<a href="/categories/{{$category->id}}/show"  class="list-group-item">{{$category->cat_name}}</a>
 			@endforeach
 	</div>
 </div>
@@ -31,7 +31,7 @@
 		                  <h5>$ {{$item->price}}</h5>
 		                  <p>{{$item->addDate}}</p>
 		                  <p class="buttons">
-                                <a href="/categories/{{$item->id}}/details" class="btn btn-default">View detail</a>
+                                <a href="/items/{{$item->id}}/show" class="btn btn-default">View detail</a>
                                 <a href="basket.html" class="btn btn-primary">
                                 <i class="fa fa-shopping-cart"></i> Add to cart</a>
                             </p>

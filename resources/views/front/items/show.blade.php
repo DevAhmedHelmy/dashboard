@@ -10,6 +10,7 @@
 @endsection
 @section('content')
 @if(isset($item))
+
 		<div class="member-data">
 			<div class="row">
 				 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -20,7 +21,7 @@
 		           		<div class="panel-body">
 			              <div class="row">
 			                <div class="col-md-3 col-lg-3 " align="center"> 
-			                	<img  src="/{{$item->item_image}}" alt="Not Found" 
+			                	<img  src="{{url($item->item_image)}}" alt="Not Found" 
 			                	class="img-circle img-responsive"> 
 			                </div>
 			                <div class=" col-md-9 col-lg-9 "> 
@@ -28,11 +29,11 @@
 			                    <tbody>
 			                      <tr>
 			                        <td>Item Name:</td>
-			                        <td>{{ucfirst(trans($item->item_name))}}</td>
+			                        <td>{{$item->item_name}}</td>
 			                      </tr>
 			                      <tr>
 			                        <td>Description</td>
-			                        <td>{{ucfirst(trans($item->description))}}</td>
+			                        <td>{{$item->description}}</td>
 			                      </tr>
 			                      <tr>
 			                        <td>Price</td>
@@ -40,7 +41,7 @@
 			                      </tr>
 	                   			<tr>
 			                        <td>Country Made</td>
-			                        <td>{{ucfirst(trans($item->country_made))}}</td>
+			                        <td>{{$item->country_made}}</td>
 			                      </tr>
 			                         <tr>
 			                             <tr>
@@ -71,7 +72,7 @@
 			                      <tr>
 			                        <td>Category</td>
 			                        <td><a href="/categories/{{$item->cat_id}}/show">
-			                        	{{ucfirst(trans($item->cat_name))}}</a>
+			                        	{{$item->cat_name}}</a>
 			                        </td>
 			                      </tr>
 			                      <tr>

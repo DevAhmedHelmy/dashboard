@@ -33,7 +33,7 @@ class CategoryController extends Controller
     	$categories->allow_adds = request('adds');
     	$categories->save();
 
-    	return redirect()->categories();
+    	return redirect('categories');
 
     }
     public function edit($id)
