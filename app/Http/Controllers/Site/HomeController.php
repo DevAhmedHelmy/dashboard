@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
     public function about()
     {
-    	return view('front/home/about');
+    	return view('front/about/about');
     }
     public function show($id)
     {

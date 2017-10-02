@@ -64,22 +64,27 @@ Route::group(['middleware' => 'is_admin'],function(){
 	Route::post('/comments/{id}/update','CommentController@update')->name('commentUpdate');
 	Route::any('/comments/{id}/delete','CommentController@destroy');
 	// end comments route
-
-
 });
 	Auth::routes();
+	Route::get('/home', 'HomeController@index')->name('home');
+	// fornt end route
 
-Route::get('/home', 'HomeController@index')->name('home');
+	// login and register route
+	Route::get('/userRegister','Site\RegisterationController@create');
+	Route::post('/userRegister','Site\RegisterationController@store');
+	Route::get('/userLogin','Site\SessionController@create');
+	Route::post('/userLogin','Site\SessionController@store');
+	Route::get('/userLogout','Site\SessionController@destroy');
 
-// fornt end route
-Route::get('/','Site\HomeController@index');
-Route::get('/about','Site\HomeController@about');
+
+	Route::get('/','Site\HomeController@index');
+	Route::get('/about','Site\HomeController@about');
 	Route::get('/front/categories','Site\CategoryController@index');
 	Route::get('/categories/{id}/show','Site\CategoryController@show');
 	Route::get('/items/{id}/show','Site\ItemController@show');
 	Route::get('{userName}/items/create','Site\ItemController@create');
 	Route::post('/itemsUser','Site\ItemController@store');
-	Route::get('/profile/{id}/show','Site\ProfileController@show');	
+	Route::get('/profile/{id}/show','Site\ProfileController@show');
 // Route::group(['middleware' => 'is_user'],function(){
 	
 // });

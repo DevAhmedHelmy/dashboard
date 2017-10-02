@@ -24,13 +24,13 @@
           <ul class="dropdown-menu">
             <li><a href="/profile/{{auth()->user()->id}}/show">Profile</a></li>
             <li><a href="{{auth()->user()->user_name}}/items/create">Add New Item</a></li>
-            <li><a href="#">LogOut</a></li>
+            <li><a href="/userLogout">LogOut</a></li>
             
           </ul>
         </li>
         @else
-        <li><a href="/login">Login</a></li>
-        <li><a href="/login">Register</a></li>
+        <li><a href="/userLogin">Login</a></li>
+        <li><a href="/userRegister">Register</a></li>
         @endif
       </ul>
       <form class="navbar-form navbar-right">
